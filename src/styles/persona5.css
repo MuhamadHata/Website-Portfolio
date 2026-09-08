@@ -1,0 +1,543 @@
+/* ==========================================================================
+   PERSONA 5 THEMATIC STYLESHEET (PHANTOM SUITE)
+   ========================================================================== */
+
+@font-face {
+  font-family: 'P5Hatty';
+  src: url('/fonts/p5hatty-1.ttf') format('truetype'),
+       url('/fonts/p5hatty.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Persona5Menu';
+  src: url('/fonts/Persona5MenuFontPrototype-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Persona5Main';
+  src: url('/fonts/Persona5main.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Expose';
+  src: url('/fonts/Expose-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HeavyHeadline';
+  src: url('/fonts/HEAVYHEA.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Markin';
+  src: url('/fonts/Markin-LT-Ultra-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-p5-title {
+  font-family: 'P5Hatty', 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  text-shadow: 
+    3px 3px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    5px 5px 0 #000;
+}
+
+.font-p5-red {
+  font-family: 'P5Hatty', 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+  color: #E60012;
+  text-shadow: 
+    3px 3px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    5px 5px 0 #000;
+}
+
+.font-p5-yellow {
+  font-family: 'P5Hatty', 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+  color: #FFE600;
+  text-shadow: 
+    3px 3px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    5px 5px 0 #000;
+}
+
+.font-p5-menu {
+  font-family: 'Bebas Neue', 'Inter', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-p5-ransom {
+  font-family: 'Persona5Menu', 'Persona5Main', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-p5-expose {
+  font-family: 'Bebas Neue', 'Anton', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-p5-num {
+  font-family: 'Markin', monospace;
+  letter-spacing: 0.05em;
+}
+
+:root {
+  --p5-red: #E60012;
+  --p5-crimson: #D91424;
+  --p5-darkred: #8A000A;
+  --p5-black: #0A0A0C;
+  --p5-dark: #121216;
+  --p5-card: #181820;
+  --p5-white: #FFFFFF;
+  --p5-yellow: #FFE600;
+  --p5-cyan: #00F0FF;
+}
+
+/* Halftone Screentone Texture */
+.p5-halftone {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+}
+
+.p5-halftone-red {
+  background-image: radial-gradient(rgba(230, 0, 18, 0.25) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+.p5-halftone-dense {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.2px, transparent 1.2px);
+  background-size: 8px 8px;
+}
+
+/* Slanted Geometry */
+.p5-skew {
+  transform: skewX(-7deg);
+}
+
+.p5-unskew {
+  transform: skewX(7deg);
+}
+
+.p5-skew-alt {
+  transform: skewY(-2deg) skewX(-4deg);
+}
+
+/* Comic Solid Offset Shadow */
+.p5-shadow-black {
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.p5-shadow-red {
+  box-shadow: 6px 6px 0px #E60012;
+}
+
+.p5-shadow-white {
+  box-shadow: 5px 5px 0px #FFFFFF;
+}
+
+.p5-shadow-heavy {
+  box-shadow: 10px 10px 0px #000000;
+}
+
+/* Jagged Polygon Cutouts */
+.p5-clip-banner {
+  clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 3% 100%);
+}
+
+.p5-clip-tag {
+  clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+}
+
+.p5-clip-badge {
+  clip-path: polygon(0% 0%, 100% 8%, 98% 100%, 2% 92%);
+}
+
+.p5-clip-card {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+}
+
+/* Persona 5 Dynamic Caution Strip */
+.p5-caution-strip {
+  background: repeating-linear-gradient(
+    -45deg,
+    #0A0A0C,
+    #0A0A0C 15px,
+    #E60012 15px,
+    #E60012 30px
+  );
+}
+
+.p5-caution-strip-yellow {
+  background: repeating-linear-gradient(
+    -45deg,
+    #0A0A0C,
+    #0A0A0C 12px,
+    #FFE600 12px,
+    #FFE600 24px
+  );
+}
+
+/* Ransom Note Style Header Blocks */
+.p5-block-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+}
+
+.p5-block-letter {
+  display: inline-block;
+  padding: 4px 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: #000;
+  background: #FFF;
+  transform: rotate(var(--rot, -2deg)) skewX(-5deg);
+  box-shadow: 3px 3px 0px #000;
+  transition: transform 0.15s ease;
+}
+
+.p5-block-letter:nth-child(even) {
+  background: #E60012;
+  color: #FFF;
+  --rot: 2.5deg;
+}
+
+.p5-block-letter:nth-child(3n) {
+  background: #0A0A0C;
+  color: #FFF;
+  border: 1px solid #FFF;
+  --rot: -3deg;
+}
+
+.p5-block-letter:hover {
+  transform: scale(1.1) rotate(0deg);
+}
+
+/* Persona 5 Star Motif */
+.p5-star-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Snappy Button */
+.p5-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  padding: 10px 24px;
+  background: #E60012;
+  color: #FFFFFF;
+  transform: skewX(-8deg);
+  box-shadow: 5px 5px 0px #000000;
+  transition: all 0.12s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  user-select: none;
+}
+
+.p5-btn > * {
+  transform: skewX(8deg);
+}
+
+.p5-btn:hover {
+  transform: skewX(-8deg) translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #000000;
+  background: #FFFFFF;
+  color: #E60012;
+}
+
+.p5-btn:active {
+  transform: skewX(-8deg) translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.p5-btn-secondary {
+  background: #1C1C24;
+  color: #FFFFFF;
+  border: 2px solid #E60012;
+}
+
+.p5-btn-secondary:hover {
+  background: #E60012;
+  color: #FFFFFF;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #E60012;
+  border: 2px solid #0A0A0C;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF2E3E;
+}
+
+/* Selection */
+::selection {
+  background-color: #E60012;
+  color: #FFFFFF;
+}
+
+/* Persona 5 Menu Cut-in & Scroll Animations */
+@keyframes p5MenuCutIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px) skewX(-14deg) scale(0.96);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(6px) skewX(-6deg) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) skewX(-8deg) scale(1);
+  }
+}
+
+@keyframes p5CardSlashIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) skewX(-8deg) scale(0.92);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-4px) skewX(-5deg) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) skewX(-6deg) scale(1);
+  }
+}
+
+@keyframes p5DiagonalFlash {
+  0% {
+    transform: scaleX(0) rotate(-45deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(1) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1.4) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.p5-menu-cutin {
+  animation: p5MenuCutIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.p5-card-entrance {
+  animation: p5CardSlashIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Persona 5 Camp Menu Typography (from Video 2) */
+.p5-camp-command {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0px #000000, 6px 6px 0px rgba(0, 0, 0, 0.9);
+}
+
+.p5-camp-desc-strip {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #000000;
+  color: #FFFFFF;
+  border-left: 4px solid #E60012;
+  padding: 4px 10px;
+  transform: skewX(-8deg);
+  box-shadow: 3px 3px 0px #000000;
+}
+
+/* Shard & All-Out Attack Elements (from Video 1) */
+.p5-comic-shard-1 {
+  clip-path: polygon(0% 0%, 100% 15%, 85% 100%, 10% 85%);
+}
+
+.p5-comic-shard-2 {
+  clip-path: polygon(15% 0%, 100% 0%, 90% 85%, 0% 100%);
+}
+
+@keyframes p5SlashGlow {
+  0% {
+    transform: scaleX(0) rotate(-35deg);
+    opacity: 0;
+  }
+  40% {
+    transform: scaleX(1.1) rotate(-35deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1.4) rotate(-35deg);
+    opacity: 0;
+  }
+}
+
+.p5-slash-flash {
+  animation: p5SlashGlow 0.45s ease-out forwards;
+}
+
+/* ====================================================================
+   REALISTIC PAPER CRUMPLE EXIT ANIMATION
+   Multi-phase: edges wrinkle → sheet folds inward → collapses to ball
+   ==================================================================== */
+@keyframes p5PaperCrumple {
+  0% {
+    transform: perspective(1200px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    clip-path: inset(0% 0% 0% 0% round 0px);
+    opacity: 1;
+    filter: brightness(1) drop-shadow(0 0 0px transparent);
+  }
+  /* Phase 1: Slight wobble — paper starts to buckle (0-15%) */
+  8% {
+    transform: perspective(1200px) scale(0.98) rotateX(1deg) rotateY(-1.5deg) rotateZ(-0.5deg);
+    clip-path: inset(0.5% 0.5% 0.5% 0.5% round 2px);
+    opacity: 1;
+    filter: brightness(0.97) drop-shadow(0 8px 20px rgba(0,0,0,0.5));
+  }
+  15% {
+    transform: perspective(1200px) scale(0.95) rotateX(-2deg) rotateY(2deg) rotateZ(1.5deg);
+    clip-path: inset(1% 1.5% 1% 1% round 4px);
+    opacity: 1;
+    filter: brightness(0.94) drop-shadow(0 12px 30px rgba(0,0,0,0.7));
+  }
+  /* Phase 2: Edges curl inward — visible wrinkling (15-40%) */
+  25% {
+    transform: perspective(1000px) scale(0.88) rotateX(4deg) rotateY(-4deg) rotateZ(-3deg) skewX(2deg);
+    clip-path: inset(3% 2.5% 3% 2% round 8px);
+    opacity: 1;
+    filter: brightness(0.88) drop-shadow(0 18px 40px rgba(0,0,0,0.85)) drop-shadow(0 0 8px rgba(230,0,18,0.3));
+  }
+  40% {
+    transform: perspective(900px) scale(0.72) rotateX(-6deg) rotateY(8deg) rotateZ(5deg) skewX(-3deg) skewY(2deg);
+    clip-path: inset(6% 5% 6% 5% round 14px);
+    opacity: 0.98;
+    filter: brightness(0.82) drop-shadow(0 22px 45px rgba(0,0,0,0.9)) drop-shadow(0 0 12px rgba(230,0,18,0.5));
+  }
+  /* Phase 3: Sheet folds dramatically — crumpling accelerates (40-70%) */
+  55% {
+    transform: perspective(700px) scale(0.48) rotateX(12deg) rotateY(-14deg) rotateZ(-10deg) skewX(6deg) skewY(-4deg);
+    clip-path: inset(12% 10% 12% 10% round 22px);
+    opacity: 0.95;
+    filter: brightness(0.7) drop-shadow(0 15px 35px rgba(0,0,0,0.95)) drop-shadow(0 0 18px rgba(230,0,18,0.7));
+  }
+  70% {
+    transform: perspective(500px) scale(0.28) rotateX(-18deg) rotateY(22deg) rotateZ(18deg) skewX(-8deg) skewY(6deg);
+    clip-path: inset(18% 16% 18% 16% round 32px);
+    opacity: 0.88;
+    filter: brightness(0.55) drop-shadow(0 8px 20px rgba(0,0,0,1));
+  }
+  /* Phase 4: Collapse into crumpled ball (70-100%) */
+  85% {
+    transform: perspective(400px) scale(0.12) rotateX(25deg) rotateY(-30deg) rotateZ(-28deg) skewX(10deg) skewY(-8deg);
+    clip-path: inset(28% 25% 28% 25% round 50%);
+    opacity: 0.6;
+    filter: brightness(0.4) drop-shadow(0 4px 10px rgba(0,0,0,1));
+  }
+  100% {
+    transform: perspective(300px) scale(0) rotateX(35deg) rotateY(-40deg) rotateZ(40deg) skewX(14deg) skewY(-10deg);
+    clip-path: inset(50% 50% 50% 50% round 50%);
+    opacity: 0;
+    filter: brightness(0.2) drop-shadow(0 0 0px transparent);
+  }
+}
+
+.animate-p5-crumple {
+  animation: p5PaperCrumple 1.1s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  transform-origin: 52% 48%;
+  will-change: transform, clip-path, opacity, filter;
+}
+
+/* Paper crease lines that appear during crumple */
+@keyframes p5CreaseCrunch {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(0.85) rotate(3deg);
+    opacity: 0.9;
+  }
+  65% {
+    transform: scale(0.5) rotate(-8deg);
+    opacity: 0.7;
+  }
+  85% {
+    transform: scale(0.2) rotate(15deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0) rotate(-25deg);
+    opacity: 0;
+  }
+}
+
+.animate-p5-crease {
+  animation: p5CreaseCrunch 1.1s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* Impact burst pulse for tear reveal center point */
+@keyframes burstPulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(3);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(6);
+    opacity: 0;
+  }
+}
+
