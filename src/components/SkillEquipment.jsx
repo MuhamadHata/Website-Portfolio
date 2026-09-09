@@ -74,7 +74,7 @@ export default function SkillEquipment() {
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-10">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-10">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat.id;
             return (
@@ -82,12 +82,12 @@ export default function SkillEquipment() {
                 key={cat.id}
                 onClick={() => handleCategoryChange(cat.id)}
                 onMouseEnter={playP5Hover}
-                className={`px-3.5 py-2 font-bebas text-base tracking-wider skew-x-[-8deg] transition-all border ${isActive
-                    ? 'bg-[#E60012] text-white border-white shadow-[5px_5px_0px_#000]'
+                className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 font-bebas text-sm sm:text-base tracking-wider skew-x-[-6deg] sm:skew-x-[-8deg] transition-all border ${isActive
+                    ? 'bg-[#E60012] text-white border-white shadow-[4px_4px_0px_#000] sm:shadow-[5px_5px_0px_#000]'
                     : 'bg-[#14141C] text-zinc-400 border-zinc-800 hover:text-white hover:border-zinc-600'
                   }`}
               >
-                <span className="skew-x-[8deg] flex items-center gap-1.5">
+                <span className="skew-x-[6deg] sm:skew-x-[8deg] flex items-center gap-1.5">
                   {cat.id === 'ALL' && <Layers size={14} />}
                   {cat.id === 'Mobile' && <Sparkles size={14} className="text-[#00F0FF]" />}
                   {cat.id === 'Web' && <Cpu size={14} className="text-[#FFE600]" />}
@@ -100,19 +100,19 @@ export default function SkillEquipment() {
         </div>
 
         {/* Tech Stack Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
           {filteredStack.map((tech, idx) => (
             <div
               key={idx}
               onMouseEnter={playP5Hover}
-              className="group relative bg-[#12121A] border-2 border-zinc-800 hover:border-[#E60012] p-5 skew-x-[-6deg] transition-all duration-150 hover:-translate-y-1 hover:shadow-[7px_7px_0px_#000] overflow-hidden"
+              className="group relative bg-[#12121A] border-2 border-zinc-800 hover:border-[#E60012] p-4 sm:p-5 skew-x-0 sm:skew-x-[-6deg] transition-all duration-150 hover:-translate-y-1 hover:shadow-[7px_7px_0px_#000] overflow-hidden"
             >
               {/* Corner Tag */}
               <div className="absolute top-0 right-0 bg-black text-[#FFE600] font-mono text-[10px] px-2 py-0.5 border-l border-b border-zinc-700 font-bold">
                 {tech.level}
               </div>
 
-              <div className="skew-x-[6deg]">
+              <div className="skew-x-0 sm:skew-x-[6deg]">
 
                 {/* Tech Logo & Name Header */}
                 <div className="flex items-center gap-3.5 mb-3">

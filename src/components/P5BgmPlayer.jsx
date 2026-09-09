@@ -65,13 +65,13 @@ export default function P5BgmPlayer({ compact = false }) {
       
       {/* Main Persona 5 Music HUD Pill */}
       <div 
-        className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-2.5 py-1 bg-[#121218] border transition-all skew-x-[-6deg] shadow-[2px_2px_0px_#000] ${
+        className={`flex items-center gap-1 sm:gap-2 px-1.5 sm:px-2.5 py-1 bg-[#121218] border transition-all skew-x-[-6deg] shadow-[2px_2px_0px_#000] ${
           isPlaying 
             ? 'border-[#FFE600] text-white shadow-[0_0_12px_rgba(255,230,0,0.25)]' 
             : 'border-zinc-700 text-zinc-400'
         }`}
       >
-        <div className="skew-x-[6deg] flex items-center gap-1.5 sm:gap-2">
+        <div className="skew-x-[6deg] flex items-center gap-1 sm:gap-2">
           
           {/* Animated Music Equalizer Bars */}
           <button
@@ -87,7 +87,7 @@ export default function P5BgmPlayer({ compact = false }) {
                 <span className="w-[2.5px] bg-white rounded-xs animate-p5-bar-3" />
               </div>
             ) : (
-              <Music size={14} className="text-zinc-500" />
+              <Music size={13} className="text-zinc-500" />
             )}
           </button>
 
@@ -99,12 +99,12 @@ export default function P5BgmPlayer({ compact = false }) {
               setShowVolumeSlider(false);
             }}
             onMouseEnter={playP5Hover}
-            className="flex items-center gap-1 text-left max-w-[110px] sm:max-w-[160px] cursor-pointer group"
+            className="flex items-center gap-0.5 sm:gap-1 text-left max-w-[70px] min-[400px]:max-w-[100px] sm:max-w-[160px] cursor-pointer group"
           >
-            <span className="text-[11px] font-mono uppercase tracking-wider truncate font-bold text-zinc-200 group-hover:text-[#FFE600] transition-colors">
+            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider truncate font-bold text-zinc-200 group-hover:text-[#FFE600] transition-colors">
               {bgmState.currentTrack.title}
             </span>
-            <ChevronDown size={12} className="text-zinc-500 group-hover:text-[#FFE600] flex-shrink-0" />
+            <ChevronDown size={11} className="text-zinc-500 group-hover:text-[#FFE600] flex-shrink-0" />
           </button>
 
           {/* Quick Play/Pause Button */}
@@ -114,7 +114,7 @@ export default function P5BgmPlayer({ compact = false }) {
             title={isPlaying ? 'Pause' : 'Play'}
             className="p-1 text-zinc-300 hover:text-[#FFE600] hover:scale-110 transition-all"
           >
-            {isPlaying ? <Pause size={13} /> : <Play size={13} className="fill-current" />}
+            {isPlaying ? <Pause size={12} /> : <Play size={12} className="fill-current" />}
           </button>
 
           {/* Quick Next Track Button */}

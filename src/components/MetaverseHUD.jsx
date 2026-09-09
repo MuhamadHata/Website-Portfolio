@@ -63,20 +63,20 @@ export default function MetaverseHUD({ activeSection, onNavigate }) {
       {/* Top Warning Strip Accent */}
       <div className="h-1.5 w-full p5-caution-strip"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
           {/* Brand / Metaverse HUD Date */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={() => handleNavClick('hero')}
               onMouseEnter={playP5Hover}
-              className="flex items-center gap-2 group text-left"
+              className="flex items-center gap-1.5 sm:gap-2 group text-left"
             >
               {/* Persona 5 Date Box */}
-              <div className="bg-[#E60012] text-white px-2.5 py-1 text-center skew-x-[-10deg] shadow-[3px_3px_0px_#000] group-hover:bg-white group-hover:text-[#E60012] transition-colors">
-                <div className="text-[11px] tracking-wider leading-none font-bebas">{currentTime.dayStr}</div>
-                <div className="text-lg leading-none font-p5-num font-bold mt-0.5">{currentTime.dateStr || 'SEP 07'}</div>
+              <div className="bg-[#E60012] text-white px-2 sm:px-2.5 py-1 text-center skew-x-[-10deg] shadow-[3px_3px_0px_#000] group-hover:bg-white group-hover:text-[#E60012] transition-colors">
+                <div className="text-[10px] sm:text-[11px] tracking-wider leading-none font-bebas">{currentTime.dayStr}</div>
+                <div className="text-base sm:text-lg leading-none font-p5-num font-bold mt-0.5">{currentTime.dateStr || 'SEP 07'}</div>
               </div>
 
               {/* Time & Title */}
@@ -136,7 +136,7 @@ export default function MetaverseHUD({ activeSection, onNavigate }) {
           </div>
 
           {/* Right Action: BGM Soundtrack Player & Sound FX Toggle & Mobile Button */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             {/* Persona 5 BGM Soundtrack Controller */}
             <P5BgmPlayer />
 
@@ -145,7 +145,7 @@ export default function MetaverseHUD({ activeSection, onNavigate }) {
               onClick={handleSoundToggle}
               onMouseEnter={playP5Hover}
               title={soundOn ? 'Matikan Efek Suara P5' : 'Aktifkan Efek Suara P5'}
-              className={`p-2 font-bebas text-xs flex items-center gap-1.5 transition-all skew-x-[-6deg] border ${soundOn
+              className={`p-1.5 sm:p-2 font-bebas text-xs flex items-center gap-1.5 transition-all skew-x-[-6deg] border ${soundOn
                   ? 'bg-[#1A1A22] text-[#FFE600] border-[#FFE600] shadow-[3px_3px_0px_#000]'
                   : 'bg-zinc-900 text-zinc-500 border-zinc-700'
                 }`}
@@ -164,11 +164,11 @@ export default function MetaverseHUD({ activeSection, onNavigate }) {
                 playP5Click();
                 setMobileMenuOpen(!mobileMenuOpen);
               }}
-              className="md:hidden p-2 bg-[#E60012] text-white skew-x-[-8deg] shadow-[3px_3px_0px_#000]"
+              className="md:hidden p-1.5 sm:p-2 bg-[#E60012] text-white skew-x-[-8deg] shadow-[3px_3px_0px_#000]"
               aria-label="Toggle menu"
             >
               <span className="block skew-x-[8deg]">
-                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
               </span>
             </button>
           </div>

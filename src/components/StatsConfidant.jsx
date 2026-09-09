@@ -71,12 +71,12 @@ export default function StatsConfidant() {
                     setSelectedId(item.id);
                   }}
                   onMouseEnter={playP5Hover}
-                  className={`cursor-pointer p-5 transition-all skew-x-[-6deg] border-2 relative ${isSelected
-                      ? 'bg-[#E60012] text-white border-white shadow-[8px_8px_0px_#000]'
-                      : 'bg-[#14141C]/90 backdrop-blur-sm text-zinc-300 border-zinc-800 hover:border-zinc-600 shadow-[4px_4px_0px_#000]'
+                  className={`cursor-pointer p-4 sm:p-5 transition-all skew-x-0 sm:skew-x-[-6deg] border-2 relative ${isSelected
+                      ? 'bg-[#E60012] text-white border-white shadow-[6px_6px_0px_#000] sm:shadow-[8px_8px_0px_#000]'
+                      : 'bg-[#14141C]/90 backdrop-blur-sm text-zinc-300 border-zinc-800 hover:border-zinc-600 shadow-[3px_3px_0px_#000] sm:shadow-[4px_4px_0px_#000]'
                     }`}
                 >
-                  <div className="skew-x-[6deg]">
+                  <div className="skew-x-0 sm:skew-x-[6deg]">
 
                     {/* Top Row Header */}
                     <div className="flex items-center justify-between gap-2 mb-2">
@@ -116,26 +116,34 @@ export default function StatsConfidant() {
 
           {/* Right Column: Detailed Dossier Panel */}
           <div className="lg:col-span-7">
-            <div className="bg-[#15151E]/95 backdrop-blur-md border-4 border-black p-6 sm:p-8 skew-x-[-4deg] shadow-[10px_10px_0px_#000] relative">
-              <div className="skew-x-[4deg]">
+            <div className="bg-[#15151E]/95 backdrop-blur-md border-4 border-black p-4 sm:p-8 skew-x-0 sm:skew-x-[-4deg] shadow-[6px_6px_0px_#000] sm:shadow-[10px_10px_0px_#000] relative">
+              <div className="skew-x-0 sm:skew-x-[4deg]">
 
-                {/* Dossier Header Banner */}
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-zinc-800 pb-4 mb-5">
-                  <div>
+                {/* Dossier Header Banner (Mobile Adaptive Stacking) */}
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b-2 border-zinc-800 pb-4 mb-5">
+                  <div className="min-w-0 flex-1">
                     <div className="text-xs font-mono text-[#E60012] uppercase tracking-wider font-bold">
                       {selectedItem.category}
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-bebas text-white tracking-wide mt-1">
+                    <h3 className="text-2xl sm:text-3xl font-bebas text-white tracking-wide mt-1 leading-tight">
                       {selectedItem.institution}
                     </h3>
-                    <div className="text-sm font-semibold text-[#FFE600] flex items-center gap-1.5 mt-0.5 font-sans">
-                      <span>{selectedItem.role}</span>
-                      <span className="text-zinc-500">•</span>
-                      <span className="text-zinc-400 font-normal">{selectedItem.unit}</span>
+                    <div className="mt-1 font-sans">
+                      <div className="text-sm sm:text-base font-semibold text-[#FFE600] flex items-center gap-1.5">
+                        {selectedItem.type === 'experience' ? (
+                          <Building2 size={15} className="flex-shrink-0" />
+                        ) : (
+                          <GraduationCap size={15} className="flex-shrink-0" />
+                        )}
+                        <span>{selectedItem.role}</span>
+                      </div>
+                      <div className="text-xs sm:text-sm text-zinc-300 font-normal mt-0.5 leading-relaxed">
+                        {selectedItem.unit}
+                      </div>
                     </div>
                   </div>
 
-                  <div className="bg-black text-[#FFE600] font-mono text-xs px-3 py-1.5 border border-zinc-800 flex items-center gap-1.5 font-bold">
+                  <div className="self-start sm:self-auto bg-black text-[#FFE600] font-mono text-xs px-3 py-1.5 border border-zinc-800 flex items-center gap-1.5 font-bold flex-shrink-0">
                     <MapPin size={13} className="text-[#E60012]" />
                     <span>{selectedItem.location}</span>
                   </div>

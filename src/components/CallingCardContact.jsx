@@ -123,12 +123,12 @@ export default function CallingCardContact() {
           <div className="lg:col-span-5 flex flex-col gap-6">
 
             {/* Themed Calling Card Envelope Frame */}
-            <div className="bg-[#E60012] p-2 skew-x-[-4deg] shadow-[10px_10px_0px_#000] border-4 border-black">
-              <div className="bg-[#111116]/95 p-6 skew-x-[4deg] border-2 border-white relative overflow-hidden backdrop-blur-sm">
+            <div className="bg-[#E60012] p-1.5 sm:p-2 skew-x-0 sm:skew-x-[-4deg] shadow-[6px_6px_0px_#000] sm:shadow-[10px_10px_0px_#000] border-4 border-black">
+              <div className="bg-[#111116]/95 p-4 sm:p-6 skew-x-0 sm:skew-x-[4deg] border-2 border-white relative overflow-hidden backdrop-blur-sm">
 
                 {/* Calling Card Seal */}
                 <div className="flex items-center justify-between border-b-2 border-[#E60012] pb-3 mb-4">
-                  <div className="font-bebas text-2xl text-white tracking-widest flex items-center gap-2">
+                  <div className="font-bebas text-xl sm:text-2xl text-white tracking-widest flex items-center gap-2">
                     <span className="text-[#FFE600]">★</span>
                     <span>PHANTOM TRANSMISSION</span>
                   </div>
@@ -151,14 +151,14 @@ export default function CallingCardContact() {
                     onMouseEnter={playP5Hover}
                     className="flex items-center gap-3 p-3 bg-[#181824] hover:bg-[#E60012] text-zinc-200 hover:text-white transition-colors border border-zinc-700 shadow-[3px_3px_0px_#000] group"
                   >
-                    <div className="p-2 bg-black text-[#FFE600] group-hover:text-white">
+                    <div className="p-2 bg-black text-[#FFE600] group-hover:text-white flex-shrink-0">
                       <Mail size={18} />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <div className="text-[11px] font-mono text-zinc-400 group-hover:text-zinc-200 font-bold">
                         EMAIL RESMI
                       </div>
-                      <div className="text-sm font-semibold tracking-wide font-mono">
+                      <div className="text-xs sm:text-sm font-semibold tracking-wide font-mono break-all sm:break-normal">
                         {personalInfo.email}
                       </div>
                     </div>
@@ -173,14 +173,14 @@ export default function CallingCardContact() {
                     onMouseEnter={playP5Hover}
                     className="flex items-center gap-3 p-3 bg-[#181824] hover:bg-[#E60012] text-zinc-200 hover:text-white transition-colors border border-zinc-700 shadow-[3px_3px_0px_#000] group"
                   >
-                    <div className="p-2 bg-black text-[#00F0FF] group-hover:text-white">
+                    <div className="p-2 bg-black text-[#00F0FF] group-hover:text-white flex-shrink-0">
                       <GithubIcon size={18} />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <div className="text-[11px] font-mono text-zinc-400 group-hover:text-zinc-200 font-bold">
                         REPOSITORI KODE
                       </div>
-                      <div className="text-sm font-semibold tracking-wide font-mono">
+                      <div className="text-xs sm:text-sm font-semibold tracking-wide font-mono truncate">
                         github.com/MuhamadHata
                       </div>
                     </div>
@@ -195,14 +195,14 @@ export default function CallingCardContact() {
                     onMouseEnter={playP5Hover}
                     className="flex items-center gap-3 p-3 bg-[#181824] hover:bg-[#E60012] text-zinc-200 hover:text-white transition-colors border border-zinc-700 shadow-[3px_3px_0px_#000] group"
                   >
-                    <div className="p-2 bg-black text-[#FFE600] group-hover:text-white">
+                    <div className="p-2 bg-black text-[#FFE600] group-hover:text-white flex-shrink-0">
                       <LinkedinIcon size={18} />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <div className="text-[11px] font-mono text-zinc-400 group-hover:text-zinc-200 font-bold">
                         JARINGAN PROFESIONAL
                       </div>
-                      <div className="text-sm font-semibold tracking-wide font-mono truncate">
+                      <div className="text-xs sm:text-sm font-semibold tracking-wide font-mono truncate">
                         linkedin.com/in/muhamad-hata-b999901a4
                       </div>
                     </div>
@@ -217,8 +217,8 @@ export default function CallingCardContact() {
 
           {/* Right Column: Calling Card Message Form */}
           <div className="lg:col-span-7">
-            <div className="bg-[#121218]/95 backdrop-blur-md border-4 border-black p-6 sm:p-8 skew-x-[-4deg] shadow-[12px_12px_0px_#000] relative">
-              <div className="skew-x-[4deg]">
+            <div className="bg-[#121218]/95 backdrop-blur-md border-4 border-black p-4 sm:p-8 skew-x-0 sm:skew-x-[-4deg] shadow-[6px_6px_0px_#000] sm:shadow-[12px_12px_0px_#000] relative">
+              <div className="skew-x-0 sm:skew-x-[4deg]">
 
                 {submitted ? (
                   <div className="py-12 text-center flex flex-col items-center justify-center">

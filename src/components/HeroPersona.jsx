@@ -5,7 +5,10 @@ import { ArrowDownRight, Award, ChevronRight, Download, FileText, Send, Sparkles
 import P5ConcentricStarsCluster, { P5SingleStar } from './P5ConcentricStars';
 
 export default function HeroPersona({ onNavigate }) {
-  const letters = "MUHAMAD HATA".split("");
+  const words = [
+    { word: "MUHAMAD", chars: "MUHAMAD".split("") },
+    { word: "HATA", chars: "HATA".split("") }
+  ];
 
   return (
     <section id="hero" className="relative min-h-[92vh] flex items-center pt-20 sm:pt-24 pb-20 sm:pb-16 overflow-hidden">
@@ -27,33 +30,35 @@ export default function HeroPersona({ onNavigate }) {
               </span>
             </div>
 
-            {/* Ransom Note Style Name Header */}
+            {/* Ransom Note Style Name Header (Grouped by Word for Clean Mobile Wrap) */}
             <div className="mb-4">
-              <div className="p5-block-title flex-wrap">
-                {letters.map((char, index) => {
-                  if (char === " ") {
-                    return <span key={index} className="w-4"></span>;
-                  }
-                  return (
-                    <span
-                      key={index}
-                      onMouseEnter={playP5Hover}
-                      className="p5-block-letter text-3xl sm:text-5xl lg:text-6xl cursor-default"
-                      style={{
-                        '--rot': `${((index % 5) - 2) * 2}deg`
-                      }}
-                    >
-                      {char}
-                    </span>
-                  );
-                })}
+              <div className="p5-block-title flex flex-wrap items-center gap-x-3 sm:gap-x-4 gap-y-2">
+                {words.map((w, wIdx) => (
+                  <div key={wIdx} className="inline-flex items-center gap-1 sm:gap-1.5 flex-nowrap">
+                    {w.chars.map((char, cIdx) => {
+                      const globalIdx = wIdx * 8 + cIdx;
+                      return (
+                        <span
+                          key={cIdx}
+                          onMouseEnter={playP5Hover}
+                          className="p5-block-letter cursor-default"
+                          style={{
+                            '--rot': `${((globalIdx % 5) - 2) * 2}deg`
+                          }}
+                        >
+                          {char}
+                        </span>
+                      );
+                    })}
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* Roles Banner (Persona 5 Slanted Ribbon) */}
-            <div className="relative my-3">
-              <div className="bg-[#E60012] text-white font-bebas text-xl sm:text-2xl lg:text-3xl px-4 py-2 skew-x-[-8deg] shadow-[6px_6px_0px_#000] inline-block border-2 border-white">
-                <span className="block skew-x-[8deg] tracking-wide">
+            <div className="relative my-3 max-w-full">
+              <div className="bg-[#E60012] text-white font-bebas text-lg sm:text-2xl lg:text-3xl px-3.5 sm:px-4 py-1.5 sm:py-2 skew-x-[-6deg] sm:skew-x-[-8deg] shadow-[4px_4px_0px_#000] sm:shadow-[6px_6px_0px_#000] inline-block border-2 border-white max-w-full">
+                <span className="block skew-x-[6deg] sm:skew-x-[8deg] tracking-wide break-words leading-tight">
                   FULLSTACK MOBILE DEVELOPER <span className="text-[#FFE600] font-mono">/</span> WEB DEVELOPER <span className="text-[#FFE600] font-mono">/</span> AI ENGINEER
                 </span>
               </div>
@@ -134,7 +139,7 @@ export default function HeroPersona({ onNavigate }) {
           </div>
 
           {/* Right Column: Persona 5 Themed Portrait Card (Compact & Balanced) */}
-          <div className="lg:col-span-4 flex justify-center items-center">
+          <div className="lg:col-span-4 flex justify-center items-center mt-6 lg:mt-0">
             <div className="relative w-full max-w-[260px] sm:max-w-[280px]">
 
               {/* Decorative Background Polygon Frame */}

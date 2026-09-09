@@ -108,15 +108,15 @@ export default function MissionProjects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className={`group relative bg-[#12121A] border-2 transition-all duration-200 skew-x-[-4deg] flex flex-col justify-between ${
+              className={`group relative bg-[#12121A] border-2 transition-all duration-200 skew-x-0 sm:skew-x-[-4deg] flex flex-col justify-between ${
                 project.featured
-                  ? 'border-[#E60012] shadow-[8px_8px_0px_#000]'
-                  : 'border-zinc-800 hover:border-zinc-600 shadow-[5px_5px_0px_#000]'
+                  ? 'border-[#E60012] shadow-[6px_6px_0px_#000] sm:shadow-[8px_8px_0px_#000]'
+                  : 'border-zinc-800 hover:border-zinc-600 shadow-[4px_4px_0px_#000] sm:shadow-[5px_5px_0px_#000]'
               }`}
             >
               
               {/* Card Header & Content */}
-              <div className="p-6 skew-x-[4deg]">
+              <div className="p-4 sm:p-6 skew-x-0 sm:skew-x-[4deg]">
                 
                 {/* Top Badge Info */}
                 <div className="flex items-center justify-between gap-2 mb-3">
@@ -167,7 +167,7 @@ export default function MissionProjects() {
               </div>
 
               {/* Card Footer Actions */}
-              <div className="p-4 bg-black/60 border-t border-zinc-800 skew-x-[4deg] flex items-center justify-between gap-3">
+              <div className="p-3.5 sm:p-4 bg-black/60 border-t border-zinc-800 skew-x-0 sm:skew-x-[4deg] flex items-center justify-between gap-3">
                 <button
                   onClick={() => handleOpenDetail(project)}
                   onMouseEnter={playP5Hover}

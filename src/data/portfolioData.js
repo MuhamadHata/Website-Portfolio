@@ -83,7 +83,7 @@ export const techStackList = [
   {
     name: "Flutter",
     category: "Mobile",
-    level: "Expert",
+    level: "Intermediate",
     icon: flutterIcon,
     description: "Multiplatform UI framework untuk Android & iOS dengan arsitektur reaktif, State Management (Provider/BLoC), dan performa 60-120 FPS.",
     color: "#02569B"
@@ -91,7 +91,7 @@ export const techStackList = [
   {
     name: "Dart",
     category: "Mobile",
-    level: "Advanced",
+    level: "Intermediate",
     icon: dartIcon,
     description: "Bahasa pemrograman strongly-typed berorientasi objek yang mendukung kompilasi AOT (Ahead-of-Time) dan JIT.",
     color: "#0081C9"
@@ -99,7 +99,7 @@ export const techStackList = [
   {
     name: "Kotlin",
     category: "Mobile",
-    level: "Advanced",
+    level: "Intermediate",
     icon: kotlinIcon,
     description: "Bahasa pemrograman modern untuk native Android development, interoperabilitas Java, Coroutines async, dan Jetpack libraries.",
     color: "#7F52FF"
@@ -107,7 +107,7 @@ export const techStackList = [
   {
     name: "Next.js",
     category: "Web",
-    level: "Advanced",
+    level: "Intermediate",
     icon: nextIcon,
     description: "React enterprise framework untuk Server-Side Rendering (SSR), Static Site Generation (SSG), App Router modern, dan arsitektur web performa tinggi.",
     color: "#000000"
@@ -115,7 +115,7 @@ export const techStackList = [
   {
     name: "React",
     category: "Web",
-    level: "Advanced",
+    level: "Intermediate",
     icon: reactIcon,
     description: "Pustaka antarmuka pengguna berbasis komponen modular dengan ekosistem Hooks, Context, dan virtual DOM efisien.",
     color: "#087EA4"
@@ -123,7 +123,7 @@ export const techStackList = [
   {
     name: "Tailwind CSS",
     category: "Web",
-    level: "Expert",
+    level: "Intermediate",
     icon: tailwindIcon,
     description: "Utility-first CSS framework untuk perancangan layout ultra-responsif, desain custom, dan integrasi animasi halus.",
     color: "#06B6D4"
@@ -155,7 +155,7 @@ export const techStackList = [
   {
     name: "Python",
     category: "AI",
-    level: "Advanced",
+    level: "Intermediate",
     icon: pythonIcon,
     description: "Bahasa pemrograman utama riset AI, otomasi skrip, integrasi REST, dan perancangan pipeline machine learning.",
     color: "#3776AB"
@@ -163,7 +163,7 @@ export const techStackList = [
   {
     name: "PyTorch & AI",
     category: "AI",
-    level: "Advanced",
+    level: "Intermediate",
     icon: pytorchIcon,
     description: "Deep learning framework dinamis untuk pelatihan model neural network, fine-tuning, dan akselerasi komputasi tensor GPU.",
     color: "#EE4C2C"
@@ -171,7 +171,7 @@ export const techStackList = [
   {
     name: "OpenCV",
     category: "AI",
-    level: "Advanced",
+    level: "Intermediate",
     icon: opencvIcon,
     description: "Library Computer Vision tingkat lanjut untuk pemrosesan citra real-time, segmentasi fitur, tracking, dan transformasi gambar.",
     color: "#5C3EE8"
@@ -179,7 +179,7 @@ export const techStackList = [
   {
     name: "NumPy",
     category: "AI",
-    level: "Advanced",
+    level: "Intermediate",
     icon: numpyIcon,
     description: "Komputasi numerik saintifik performa tinggi, operasi array multidimensi, aljabar linear, dan manipulasi tensor.",
     color: "#013243"
@@ -187,7 +187,7 @@ export const techStackList = [
   {
     name: "Supabase",
     category: "Backend",
-    level: "Advanced",
+    level: "Intermediate",
     icon: supabaseIcon,
     description: "BaaS terbuka berbasis PostgreSQL, Realtime WebSockets, Row Level Security (RLS), Edge Functions, dan Storage.",
     color: "#3ECF8E"
@@ -195,7 +195,7 @@ export const techStackList = [
   {
     name: "Firebase",
     category: "Backend",
-    level: "Advanced",
+    level: "Intermediate",
     icon: firebaseIcon,
     description: "Google Cloud BaaS: Firebase Authentication, Cloud Firestore NoSQL, Cloud Messaging (FCM), dan Crashlytics telemetry.",
     color: "#FFCA28"
@@ -203,7 +203,7 @@ export const techStackList = [
   {
     name: "FastAPI",
     category: "Backend",
-    level: "Advanced",
+    level: "Intermediate",
     icon: fastapiIcon,
     description: "Web framework Python modern berkecepatan tinggi berbasis OpenAPI, Pydantic, dan async/await untuk microservices AI.",
     color: "#059669"
@@ -211,7 +211,7 @@ export const techStackList = [
   {
     name: "PHP",
     category: "Backend",
-    level: "Advanced",
+    level: "Intermediate",
     icon: phpIcon,
     description: "Pengembangan server-side web dinamis, integrasi database relasional MySQL, otentikasi sesi, dan CRUD sistem informasi.",
     color: "#4F5D95"
@@ -219,7 +219,7 @@ export const techStackList = [
   {
     name: "MySQL",
     category: "Backend",
-    level: "Advanced",
+    level: "Intermediate",
     icon: mysqlIcon,
     description: "Relational Database Management System (RDBMS), perancangan skema relasional, indexing, dan optimasi query terstruktur.",
     color: "#00758F"
@@ -243,7 +243,7 @@ export const techStackList = [
   {
     name: "Git",
     category: "Tools",
-    level: "Advanced",
+    level: "Intermediate",
     icon: gitIcon,
     description: "Distributed version control system untuk pelacakan perubahan kode, branching, merging, dan staging terstruktur.",
     color: "#F05032"
@@ -251,7 +251,7 @@ export const techStackList = [
   {
     name: "GitHub",
     category: "Tools",
-    level: "Advanced",
+    level: "Intermediate",
     icon: githubIcon,
     description: "Platform kolaborasi kode, CI/CD GitHub Actions, repositori terbuka, Issue tracking, dan open-source deployment.",
     color: "#181717"
@@ -259,7 +259,7 @@ export const techStackList = [
   {
     name: "VS Code",
     category: "Tools",
-    level: "Expert",
+    level: "Intermediate",
     icon: vscodeIcon,
     description: "Lingkungan pengembangan kode terpadu utama dengan kustomisasi debugging, linting, integrasi Git, dan remote SSH.",
     color: "#007ACC"

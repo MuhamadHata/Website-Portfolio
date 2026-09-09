@@ -238,6 +238,17 @@
   --rot: -3deg;
 }
 
+@media (max-width: 640px) {
+  .p5-block-title {
+    gap: 3px;
+  }
+  .p5-block-letter {
+    padding: 2px 7px;
+    font-size: 1.5rem;
+    box-shadow: 2px 2px 0px #000;
+  }
+}
+
 .p5-block-letter:hover {
   transform: scale(1.1) rotate(0deg);
 }

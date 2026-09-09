@@ -137,19 +137,19 @@ export default function ProjectDetailModal({ project, onClose }) {
       {/* ============================================================
           1. FIXED TOP HEADER BAR (FULLSCREEN WIDTH)
           ============================================================ */}
-      <div className="flex-shrink-0 px-4 sm:px-8 py-3.5 sm:py-4 border-b-2 border-zinc-800 bg-[#121218] relative z-10 shadow-md">
+      <div className="flex-shrink-0 px-3 sm:px-8 py-2.5 sm:py-4 border-b-2 border-zinc-800 bg-[#121218] relative z-10 shadow-md">
         
         {/* Top Row: Badges & Close Button */}
-        <div className="flex items-center justify-between gap-3 mb-2">
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="inline-flex items-center gap-1.5 bg-black text-[#FFE600] font-mono text-xs px-2.5 py-0.5 border border-zinc-700 shadow-[2px_2px_0px_#000] font-bold tracking-wider">
+        <div className="flex items-center justify-between gap-2 sm:gap-3 mb-2">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 min-w-0">
+            <div className="hidden sm:inline-flex items-center gap-1.5 bg-black text-[#FFE600] font-mono text-xs px-2.5 py-0.5 border border-zinc-700 shadow-[2px_2px_0px_#000] font-bold tracking-wider">
               <span className="text-[#E60012]">★</span>
               <span>ALL-OUT ATTACK // MISSION DOSSIER</span>
             </div>
-            <span className="bg-[#E60012] text-white font-mono text-xs px-2.5 py-0.5 shadow-[2px_2px_0px_#000] font-bold">
+            <span className="bg-[#E60012] text-white font-mono text-[10px] sm:text-xs px-2 py-0.5 shadow-[2px_2px_0px_#000] font-bold">
               {project.rankBadge || 'PHANTOM MISSION'}
             </span>
-            <span className="text-xs font-mono text-[#00F0FF] uppercase tracking-wider font-bold bg-[#14141C] px-2.5 py-0.5 border border-zinc-800">
+            <span className="text-[10px] sm:text-xs font-mono text-[#00F0FF] uppercase tracking-wider font-bold bg-[#14141C] px-2 py-0.5 border border-zinc-800">
               {project.category}
             </span>
           </div>
@@ -158,18 +158,18 @@ export default function ProjectDetailModal({ project, onClose }) {
           <button
             onClick={handleClose}
             onMouseEnter={playP5Hover}
-            className="group relative flex items-center bg-black text-white hover:bg-[#FFE600] hover:text-black border-2 border-white hover:border-black transition-all duration-150 shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#E60012] skew-x-[-10deg] p-0.5 cursor-pointer overflow-hidden"
+            className="group relative flex items-center bg-black text-white hover:bg-[#FFE600] hover:text-black border-2 border-white hover:border-black transition-all duration-150 shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#E60012] skew-x-[-10deg] p-0.5 cursor-pointer overflow-hidden flex-shrink-0"
             aria-label="Tutup Detail Proyek"
           >
             {/* Red Accent Flank Tag with ESC Hint */}
-            <div className="bg-[#E60012] text-white px-2 py-1 font-mono text-[10px] sm:text-xs font-bold skew-x-[10deg] flex items-center gap-1 group-hover:bg-black group-hover:text-[#FFE600] transition-colors">
+            <div className="bg-[#E60012] text-white px-1.5 sm:px-2 py-0.5 sm:py-1 font-mono text-[10px] sm:text-xs font-bold skew-x-[10deg] flex items-center gap-1 group-hover:bg-black group-hover:text-[#FFE600] transition-colors">
               <span className="text-[#FFE600] group-hover:text-white">★</span>
               <span>ESC</span>
             </div>
 
             {/* Main Close Text with Icon */}
-            <div className="px-2.5 py-1 font-bebas text-sm sm:text-base tracking-widest skew-x-[10deg] flex items-center gap-1.5 font-bold">
-              <X size={16} className="group-hover:rotate-90 group-hover:scale-125 transition-transform duration-200" />
+            <div className="px-2 sm:px-2.5 py-0.5 sm:py-1 font-bebas text-xs sm:text-base tracking-widest skew-x-[10deg] flex items-center gap-1 sm:gap-1.5 font-bold">
+              <X size={15} className="group-hover:rotate-90 group-hover:scale-125 transition-transform duration-200" />
               <span>TUTUP</span>
               <span className="text-[#E60012] group-hover:text-black font-mono text-xs">///</span>
             </div>
@@ -448,39 +448,39 @@ export default function ProjectDetailModal({ project, onClose }) {
       {/* ============================================================
           3. FIXED BOTTOM ACTION BAR (FULLSCREEN WIDTH)
           ============================================================ */}
-      <div className="flex-shrink-0 px-4 sm:px-8 py-3.5 sm:py-4 border-t-2 border-zinc-800 bg-[#121218] flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative z-10 shadow-lg">
+      <div className="flex-shrink-0 px-3 sm:px-8 py-2.5 sm:py-4 border-t-2 border-zinc-800 bg-[#121218] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3 relative z-10 shadow-lg">
         
-        <div className="text-xs sm:text-sm font-mono text-zinc-400 flex items-center gap-2">
+        <div className="text-xs sm:text-sm font-mono text-zinc-400 flex items-center gap-1.5 sm:gap-2">
           <span className="text-[#FFE600]">★</span>
           <span>GITHUB:</span>
           <a 
             href={project.githubUrl}
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-white hover:text-[#00F0FF] underline font-bold truncate max-w-md"
+            className="text-white hover:text-[#00F0FF] underline font-bold truncate max-w-[200px] sm:max-w-md"
           >
             {project.githubUrl.replace('https://github.com/', '')}
           </a>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <a
             href={project.githubUrl}
             target="_blank" 
             rel="noopener noreferrer"
             onClick={playP5Click}
             onMouseEnter={playP5Hover}
-            className="p5-btn bg-[#E60012] text-white hover:bg-white hover:text-[#E60012] text-xs sm:text-sm py-2 px-4 inline-flex items-center gap-2"
+            className="p5-btn bg-[#E60012] text-white hover:bg-white hover:text-[#E60012] text-xs sm:text-sm py-1.5 sm:py-2 px-3 sm:px-4 inline-flex items-center justify-center gap-1.5 flex-1 sm:flex-initial text-center"
           >
-            <GithubIcon size={16} />
+            <GithubIcon size={15} />
             <span>BUKA REPOSITORI GITHUB</span>
-            <ExternalLink size={14} />
+            <ExternalLink size={13} />
           </a>
 
           <button
             onClick={handleClose}
             onMouseEnter={playP5Hover}
-            className="px-4 py-2 bg-black text-[#FFE600] hover:bg-[#E60012] hover:text-white font-bebas text-xs sm:text-sm tracking-widest skew-x-[-8deg] border-2 border-zinc-600 hover:border-white shadow-[3px_3px_0px_#000] hover:shadow-[5px_5px_0px_#FFE600] transition-all flex items-center gap-1.5 cursor-pointer font-bold"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-black text-[#FFE600] hover:bg-[#E60012] hover:text-white font-bebas text-xs sm:text-sm tracking-widest skew-x-[-8deg] border-2 border-zinc-600 hover:border-white shadow-[3px_3px_0px_#000] hover:shadow-[5px_5px_0px_#FFE600] transition-all flex items-center justify-center gap-1.5 cursor-pointer font-bold flex-1 sm:flex-initial"
           >
             <span className="skew-x-[8deg] flex items-center gap-1.5">
               <span>★</span>
