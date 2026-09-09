@@ -1,59 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { playP5PaperTear, playP5Click } from '../utils/soundEffects';
-import { Star, MousePointerClick } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { playP5PaperTear } from '../utils/soundEffects';
+import { Star } from 'lucide-react';
 
 /**
- * P5ProjectDossierTear — Persona 5 Calling Card & Project Dossier Unseal Transition
+ * P5ProjectDossierTear — Persona 5 Project Dossier Auto-Unseal Transition
  * 
- * Perfected Layout:
- * - Vertical jagged seam dividing left (Black) and right (Red) with zero title clipping
- * - 1.4s showcase pause so user can read project dossier content clearly
- * - Interactive click/keyboard support for instant opening
- * - Smooth 1.15s organic peeling transition with 3D depth
+ * Purely automatic transition when opening a project dossier:
+ * - Electric slash cut immediately on mount (zero user clicks required)
+ * - Smooth peeling animation (left black, right red)
+ * - Auto unmounts in ~0.95s to reveal the full modal
  */
 export default function P5ProjectDossierTear({ project, onComplete }) {
-  const [stage, setStage] = useState('sealed'); // 'sealed' -> 'slashing' -> 'tearing' -> 'done'
+  // 'slashing' -> 'tearing' -> 'done'
+  const [stage, setStage] = useState('slashing');
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    // Keyboard listener: space, enter, or esc triggers unseal
-    const handleKeyDown = (e) => {
-      if (e.key === ' ' || e.key === 'Enter') {
-        triggerUnseal();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-
-    // Showcase Pause: Hold for 1.4s so user can read the dossier before tearing open
-    const autoTimer = setTimeout(() => {
-      triggerUnseal();
-    }, 1400);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      clearTimeout(autoTimer);
-    };
-  }, []);
-
-  const triggerUnseal = () => {
-    if (stage !== 'sealed') return;
-
-    setStage('slashing');
+    // Play sound immediately on mount
     playP5PaperTear();
 
-    // Peeling begins after the electric cut
-    setTimeout(() => {
+    // Start peeling transition
+    const tearTimer = setTimeout(() => {
       setStage('tearing');
-    }, 380);
+    }, 280);
 
-    // Unmount once both halves have gracefully peeled away (1.4s after slash)
-    setTimeout(() => {
+    // Finish and reveal modal content
+    const completeTimer = setTimeout(() => {
       setStage('done');
       setVisible(false);
       if (onComplete) onComplete();
-    }, 1400);
-  };
+    }, 950);
+
+    return () => {
+      clearTimeout(tearTimer);
+      clearTimeout(completeTimer);
+    };
+  }, [onComplete]);
 
   if (!visible) return null;
 
@@ -63,13 +46,7 @@ export default function P5ProjectDossierTear({ project, onComplete }) {
   const isTorn = stage === 'tearing' || stage === 'done';
 
   return (
-    <div 
-      onClick={triggerUnseal}
-      className={`fixed inset-0 z-[999999] overflow-hidden select-none transition-opacity duration-300 ${
-        isTorn ? 'pointer-events-none opacity-100' : 'cursor-pointer bg-black/95 opacity-100'
-      }`}
-      title="Klik di mana saja untuk membuka langsung"
-    >
+    <div className="fixed inset-0 z-[999999] overflow-hidden select-none pointer-events-none">
       {/* SVG Filters for Lightning Glow */}
       <svg className="absolute w-0 h-0 pointer-events-none">
         <defs>
@@ -96,12 +73,12 @@ export default function P5ProjectDossierTear({ project, onComplete }) {
             : { x: 0, rotate: 0, opacity: 1 }
         }
         transition={{
-          duration: 1.15,
+          duration: 0.65,
           ease: [0.16, 1, 0.3, 1],
         }}
         className="absolute inset-0"
       >
-        {/* Black Polygon Layer (Background only — no content inside to avoid clipping) */}
+        {/* Black Polygon Layer */}
         <div
           className="absolute inset-0 bg-[#0A0A0C]"
           style={{
@@ -125,31 +102,24 @@ export default function P5ProjectDossierTear({ project, onComplete }) {
           }}
         >
           <div className="absolute inset-0 p5-halftone opacity-35" />
-          
-          {/* Top Slanted Caution Ribbon */}
           <div className="absolute top-12 left-0 right-0 h-6 p5-caution-strip rotate-[-2deg] opacity-80 shadow-lg" />
         </div>
 
-        {/* Left Project Header Dossier Content — OUTSIDE clip-path so title is never cut off */}
+        {/* Left Project Header Dossier Content */}
         <div className="absolute top-6 left-4 sm:top-14 sm:left-14 z-10 max-w-[52%] sm:max-w-[38%] lg:max-w-[36%]">
-          
-          {/* Top Badge */}
           <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#E60012] text-white font-p5-menu text-[10px] sm:text-sm px-2.5 sm:px-3.5 py-1 sm:py-1.5 skew-x-[-10deg] shadow-[3px_3px_0px_#000] mb-2 sm:mb-3 font-bold">
             <Star size={12} className="fill-[#FFE600] text-[#FFE600] sm:w-3.5 sm:h-3.5" />
             <span>CONFIDENTIAL // METAVERSE MISSION DOSSIER</span>
           </div>
 
-          {/* Project Title (Clean, Crisp, Never Overlapped) */}
           <h1 className="font-p5-title text-2xl sm:text-5xl lg:text-6xl text-white tracking-wide leading-tight drop-shadow-[4px_4px_0px_#000] sm:drop-shadow-[5px_5px_0px_#000] mb-1 sm:mb-2">
             {project?.title || 'TARGET MISSION'}
           </h1>
 
-          {/* Project Subtitle */}
           <p className="text-xs sm:text-sm lg:text-base font-semibold text-[#FFE600] mb-3 max-w-md sm:max-w-lg line-clamp-2 font-sans">
             {project?.subtitle}
           </p>
 
-          {/* Tech Stack Preview Badges */}
           <div className="flex flex-wrap gap-1.5 sm:gap-2">
             <span className="bg-white text-black font-mono text-[11px] sm:text-xs px-2.5 py-0.5 font-bold skew-x-[-6deg] shadow-[2px_2px_0px_#000]">
               {project?.category?.toUpperCase() || 'PROYEK'}
@@ -163,7 +133,6 @@ export default function P5ProjectDossierTear({ project, onComplete }) {
               </span>
             ))}
           </div>
-
         </div>
 
         {/* White Jagged Seam Edge Line */}
@@ -196,7 +165,7 @@ export default function P5ProjectDossierTear({ project, onComplete }) {
             : { x: 0, rotate: 0, opacity: 1 }
         }
         transition={{
-          duration: 1.15,
+          duration: 0.65,
           ease: [0.16, 1, 0.3, 1],
         }}
         className="absolute inset-0"
@@ -225,12 +194,10 @@ export default function P5ProjectDossierTear({ project, onComplete }) {
           }}
         >
           <div className="absolute inset-0 p5-halftone-dense opacity-35" />
-
-          {/* Bottom Slanted Caution Ribbon */}
           <div className="absolute bottom-12 left-0 right-0 h-6 p5-caution-strip-yellow rotate-[-2deg] opacity-75 shadow-lg" />
         </div>
 
-        {/* Right Typography & Calling Card Badge — OUTSIDE clip-path to prevent clipping */}
+        {/* Right Typography & Calling Card Badge */}
         <div className="absolute bottom-6 right-4 sm:bottom-14 sm:right-12 text-right z-10 max-w-[65%] sm:max-w-[45%] lg:max-w-[40%]">
           <div className="inline-block bg-black text-white font-p5 text-xl sm:text-5xl px-3 sm:px-5 py-1 sm:py-2 skew-x-[-8deg] sm:skew-x-[-10deg] shadow-[5px_5px_0px_#000] sm:shadow-[8px_8px_0px_#000] border-2 border-white mb-1.5 sm:mb-2 font-bold">
             TAKE YOUR HEART!
@@ -318,38 +285,6 @@ export default function P5ProjectDossierTear({ project, onComplete }) {
           </div>
         )}
       </div>
-
-      {/* ============================================================
-          CENTER WAX SEAL / INTERACTIVE CALLING CARD BANNER
-          ============================================================ */}
-      <AnimatePresence>
-        {!isTorn && (
-          <motion.div
-            initial={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.2, transition: { duration: 0.3 } }}
-            className="absolute inset-0 pointer-events-none flex items-center justify-center z-40 px-3"
-          >
-            <div className="relative flex flex-col items-center group pointer-events-auto">
-              <div className="bg-black border-2 sm:border-4 border-white p-3 sm:p-6 skew-x-[-8deg] sm:skew-x-[-12deg] shadow-[8px_8px_0px_#E60012] sm:shadow-[14px_14px_0px_#E60012] rotate-[-4deg] transition-all duration-200 group-hover:border-[#FFE600] group-hover:scale-105 max-w-[92vw] sm:max-w-none">
-                <div className="skew-x-[8deg] sm:skew-x-[12deg] flex items-center gap-2.5 sm:gap-3.5">
-                  <span className="w-10 h-10 sm:w-14 sm:h-14 bg-[#E60012] text-white flex items-center justify-center font-p5 text-xl sm:text-4xl shadow-[3px_3px_0px_#000] animate-bounce flex-shrink-0">
-                    ★
-                  </span>
-                  <div>
-                    <div className="text-white font-p5-expose text-lg sm:text-3xl tracking-wider sm:tracking-widest leading-none flex items-center gap-2">
-                      <span>MEMBUKA BERKAS MISI</span>
-                    </div>
-                    <div className="text-[#FFE600] font-mono text-[10px] sm:text-sm tracking-wider font-bold mt-1 sm:mt-1.5 flex items-center gap-1.5">
-                      <MousePointerClick size={14} className="text-[#FFE600] sm:w-[15px] sm:h-[15px]" />
-                      <span>KLIK UNTUK MEMBUKA LANGSUNG</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
     </div>
   );
