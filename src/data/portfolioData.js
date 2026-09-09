@@ -79,6 +79,54 @@ import githubIcon from '../assets/GitHub.svg';
 import vscodeIcon from '../assets/Visual Studio Code (VS Code).svg';
 import figmaIcon from '../assets/Figma.svg';
 
+// --- Local Project Screenshots Imports ---
+// 1. SEHATI-AI
+import sehatiBeranda from '../assets/tampilan project/Projek Sehati-AI/tampilan beranda.jpeg';
+import sehatiScanMakanan from '../assets/tampilan project/Projek Sehati-AI/tampilan scan makanan.jpeg';
+import sehatiLogMakanan from '../assets/tampilan project/Projek Sehati-AI/tampilan log makanan.jpeg';
+import sehatiDeteksiDiabetes from '../assets/tampilan project/Projek Sehati-AI/tampilan deteksi diabetes.jpeg';
+import sehatiHasilDiabetes from '../assets/tampilan project/Projek Sehati-AI/tampilan hasil deteksi diabetes.jpeg';
+import sehatiGulaDarah from '../assets/tampilan project/Projek Sehati-AI/tampilan kadar gula darah.jpeg';
+import sehatiLangkah from '../assets/tampilan project/Projek Sehati-AI/tampilan langkah.jpeg';
+import sehatiAktivitas from '../assets/tampilan project/Projek Sehati-AI/tampilan aktivitas.jpeg';
+import sehatiChatbot from '../assets/tampilan project/Projek Sehati-AI/tampilan chatbot.jpeg';
+import sehatiDiet from '../assets/tampilan project/Projek Sehati-AI/tampilan program diet.jpeg';
+import sehatiWorkout from '../assets/tampilan project/Projek Sehati-AI/tampilan workout.jpeg';
+import sehatiScanBeauty from '../assets/tampilan project/Projek Sehati-AI/tampilan scan beauty.jpeg';
+import sehatiProfil from '../assets/tampilan project/Projek Sehati-AI/tampilan profil.jpeg';
+
+// 2. Anilive
+import aniliveHome from '../assets/tampilan project/Projek Anilive/Tampilan Home.jpeg';
+import anilivePencarian from '../assets/tampilan project/Projek Anilive/Tampilan Fitur Pencarian.jpeg';
+import aniliveExplore from '../assets/tampilan project/Projek Anilive/Tampilan Halaman Explore.jpeg';
+import aniliveDetail from '../assets/tampilan project/Projek Anilive/Tampilan Rinci Anime.jpeg';
+import aniliveLivechat from '../assets/tampilan project/Projek Anilive/Tampilan Livechat.jpeg';
+import anilivePrivateChat from '../assets/tampilan project/Projek Anilive/Tampilan private chat.jpeg';
+import aniliveNotifikasi from '../assets/tampilan project/Projek Anilive/Tampilan Notifikasi.jpeg';
+import aniliveProfil from '../assets/tampilan project/Projek Anilive/Tampilan Profil.jpeg';
+
+// 3. Pelita
+import pelitaBeranda from '../assets/tampilan project/Projek Pelita/Tampilan Beranda.jpeg';
+import pelitaCekGizi from '../assets/tampilan project/Projek Pelita/Tampilan Cek Status Gizi.jpeg';
+import pelitaHasilGizi from '../assets/tampilan project/Projek Pelita/Tampilan Hasil Perhitungan Gizi.jpeg';
+import pelitaChatbot from '../assets/tampilan project/Projek Pelita/Tampilan Chatbot.jpeg';
+
+// 4. Bimbel QTA
+import bimbelBeranda from '../assets/tampilan project/Projek Website Bimbel QTA/Beranda.png';
+import bimbelLMS from '../assets/tampilan project/Projek Website Bimbel QTA/LMS.png';
+import bimbelTambahCourse from '../assets/tampilan project/Projek Website Bimbel QTA/LMS Tambah Course.png';
+import bimbelLayanan from '../assets/tampilan project/Projek Website Bimbel QTA/Layanan.png';
+import bimbelProfil from '../assets/tampilan project/Projek Website Bimbel QTA/Profil Bimbel QTA.png';
+import bimbelKontak from '../assets/tampilan project/Projek Website Bimbel QTA/Kontak dan Pendaftaran.png';
+
+// 5. Catshop
+import catshopAwal from '../assets/tampilan project/Projek Website Catshop/Tampilan Awal.png';
+import catshopShop from '../assets/tampilan project/Projek Website Catshop/Shop.png';
+import catshopGrooming from '../assets/tampilan project/Projek Website Catshop/Layanan Grooming.png';
+import catshopPenitipan from '../assets/tampilan project/Projek Website Catshop/Layanan Penitipan.png';
+import catshopLogin from '../assets/tampilan project/Projek Website Catshop/Login.png';
+import catshopSignUp from '../assets/tampilan project/Projek Website Catshop/Sign Up.png';
+
 export const techStackList = [
   {
     name: "Flutter",
@@ -294,79 +342,79 @@ export const projectList = [
     techStack: ["Flutter", "Dart", "Supabase", "Python", "YOLOv8", "Gemini API", "Groq LLaMA-3", "Sensor Fusion"],
     screenshots: [
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20beranda.jpeg",
+        url: sehatiBeranda,
         title: "Dasbor Beranda Utama",
         caption: "Dasbor holistik, skor penuaan biologis, metrik kalori & status hidrasi harian",
         tag: "Dashboard"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20scan%20makanan.jpeg",
+        url: sehatiScanMakanan,
         title: "AI Food Recognition (Vision)",
         caption: "Deteksi otomatis jenis makanan dengan YOLOv8 dan estimasi nilai gizi",
         tag: "Computer Vision"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20log%20makanan.jpeg",
+        url: sehatiLogMakanan,
         title: "Pencatatan & Log Nutrisi",
         caption: "Riwayat asupan makanan, rincian makronutrisi (karbohidrat, protein, lemak)",
         tag: "Nutrisi"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20deteksi%20diabetes.jpeg",
+        url: sehatiDeteksiDiabetes,
         title: "Input Skrining Diabetes",
         caption: "Formulir parameter klinis untuk skrining awal risiko diabetes tipe-2",
         tag: "Clinical ML"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20hasil%20deteksi%20diabetes.jpeg",
+        url: sehatiHasilDiabetes,
         title: "Hasil Prediksi & Analisis Risiko",
         caption: "Hasil evaluasi berbasis model klasifikasi machine learning dan rekomendasi tindakan",
         tag: "ML Result"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20kadar%20gula%20darah.jpeg",
+        url: sehatiGulaDarah,
         title: "Pemantauan Kadar Gula Darah",
         caption: "Buku catatan glukosa (puasa, sewaktu, 2 jam PP) dengan visualisasi grafik tren",
         tag: "Monitoring"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20langkah.jpeg",
+        url: sehatiLangkah,
         title: "Pelacak Langkah Sensorik",
         caption: "Penghitung langkah sensorik real-time, cadence, dan progres target harian",
         tag: "Pedometer"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20aktivitas.jpeg",
+        url: sehatiAktivitas,
         title: "Analisis Aktivitas Fisik",
         caption: "Statistik kebugaran harian, riwayat durasi dan pembakaran kalori aktif",
         tag: "Fitness"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20chatbot.jpeg",
+        url: sehatiChatbot,
         title: "Chatbot Kesehatan Nubi",
         caption: "Konsultasi kesehatan interaktif bertenaga LLM (Groq LLaMA 3 / Google Gemini)",
         tag: "GenAI"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20program%20diet.jpeg",
+        url: sehatiDiet,
         title: "Program Diet Terstruktur",
         caption: "Program nutrisi terarah berbasis prinsip Isi Piringku Kemenkes RI",
         tag: "Diet"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20workout.jpeg",
+        url: sehatiWorkout,
         title: "Panduan & Direktori Workout",
         caption: "Panduan latihan per kelompok otot dengan animasi dan target repetisi",
         tag: "Workout"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20scan%20beauty.jpeg",
+        url: sehatiScanBeauty,
         title: "Scan Kecantikan & Kulit",
         caption: "Analisis kondisi kulit wajah dan edukasi proteksi kesehatan kulit dari indeks UV",
         tag: "Skin AI"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Aplikasi-SEHATI-AI/main/Tampilan%20Fitur%20Sehati/tampilan%20profil.jpeg",
+        url: sehatiProfil,
         title: "Profil Pengguna & Biometrik",
         caption: "Pengaturan data biometrik, target kebugaran, dan preferensi akun pengguna",
         tag: "Profile"
@@ -396,49 +444,49 @@ export const projectList = [
     techStack: ["Flutter", "Dart", "Supabase Realtime", "Together AI", "LLaMA-3", "Riverpod", "SQLite", "Giphy API"],
     screenshots: [
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Anilive/main/docs/screenshots/01_pencarian_ai_rag.jpeg",
+        url: aniliveHome,
+        title: "Tampilan Beranda Utama",
+        caption: "Dasbor utama Anilive dengan banner anime populer dan rekomendasi terkini",
+        tag: "Home"
+      },
+      {
+        url: anilivePencarian,
         title: "Pencarian AI RAG",
         caption: "Pencarian semantik cerdas berbasis bahasa alami dengan Together AI LLaMA-3",
         tag: "AI RAG"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Anilive/main/docs/screenshots/02_explore_anime.jpeg",
+        url: aniliveExplore,
         title: "Halaman Explore Anime",
         caption: "Katalog 30.000+ anime dengan filter genre, musim, dan status rilis",
         tag: "Explore"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Anilive/main/docs/screenshots/03_detail_anime.jpeg",
+        url: aniliveDetail,
         title: "Halaman Detail Anime",
         caption: "Sinopsis lengkap, daftar episode, karakter, dan trailer video",
         tag: "Detail"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Anilive/main/docs/screenshots/04_home_feed.jpeg",
-        title: "Feed Status Komunitas",
-        caption: "Linimasa kiriman komunitas penggemar dengan komentar bersarang",
-        tag: "Social Feed"
-      },
-      {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Anilive/main/docs/screenshots/05_livechat.jpeg",
+        url: aniliveLivechat,
         title: "Ruang Live Chat Realtime",
         caption: "Diskusi langsung per judul anime bertenaga Supabase WebSocket",
         tag: "Livechat"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Anilive/main/docs/screenshots/06_private_chat.jpeg",
+        url: anilivePrivateChat,
         title: "Direct Message (Pesan Pribadi)",
         caption: "Komunikasi privat antar pengguna secara instan dan responsif",
         tag: "Messaging"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Anilive/main/docs/screenshots/07_notifikasi.jpeg",
+        url: aniliveNotifikasi,
         title: "Pusat Notifikasi Interaksi",
         caption: "Pemberitahuan aktivitas pertemanan, balasan komentar, dan rilis baru",
         tag: "Notification"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Anilive/main/docs/screenshots/08_profil_user.jpeg",
+        url: aniliveProfil,
         title: "Profil Pengguna Dinamis",
         caption: "Kustomisasi profil pengguna dengan integrasi banner animasi Giphy",
         tag: "Profile"
@@ -466,25 +514,25 @@ export const projectList = [
     techStack: ["Flutter", "Dart", "Supabase", "Google Gemini AI", "Material 3", "Figma"],
     screenshots: [
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Aplikasi-Pelita/main/tampilan%20UI%20Pelita/Tampilan%20Beranda.jpeg",
+        url: pelitaBeranda,
         title: "Tampilan Beranda Utama",
-        caption: "Antarmuka beranda ramah keluarga dengan akses cepat ke seluruh layanan",
+        caption: "Antarmuka beranda ramah keluarga dengan akses cepat ke seluruh layanan publik",
         tag: "Beranda"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Aplikasi-Pelita/main/tampilan%20UI%20Pelita/Tampilan%20Cek%20Status%20Gizi.jpeg",
+        url: pelitaCekGizi,
         title: "Formulir Cek Status Gizi Balita",
-        caption: "Input data antropometri berat, tinggi, dan usia untuk skrining gizi",
+        caption: "Input data antropometri berat, tinggi, dan usia untuk skrining tumbuh kembang",
         tag: "Cek Gizi"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Aplikasi-Pelita/main/tampilan%20UI%20Pelita/Tampilan%20Hasil%20Perhitungan%20Gizi.jpeg",
+        url: pelitaHasilGizi,
         title: "Hasil Evaluasi Status Gizi",
-        caption: "Hasil perhitungan status gizi dan rekomendasi gizi pencegahan stunting",
+        caption: "Hasil perhitungan status gizi dan rekomendasi nutrisi pencegahan stunting",
         tag: "Hasil Gizi"
       },
       {
-        url: "https://raw.githubusercontent.com/MuhamadHata/Projek-Aplikasi-Pelita/main/tampilan%20UI%20Pelita/Tampilan%20Chatbot.jpeg",
+        url: pelitaChatbot,
         title: "Chatbot Nutrisi Anak (Gemini AI)",
         caption: "Konsultasi cerdas seputar nutrisi, jadwal MPASI, dan perawatan balita",
         tag: "Chatbot"
@@ -510,7 +558,44 @@ export const projectList = [
     ],
     architecture: "Server-side: PHP; Database: MySQL; Client-side: HTML5, CSS3, JavaScript; Lisensi: GPL-3.0.",
     techStack: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript", "Information System"],
-    screenshots: []
+    screenshots: [
+      {
+        url: bimbelBeranda,
+        title: "Halaman Beranda Utama",
+        caption: "Portal informasi resmi bimbingan belajar QTA dengan navigasi lengkap",
+        tag: "Portal Web"
+      },
+      {
+        url: bimbelLMS,
+        title: "Dasbor LMS & Modul Pembelajaran",
+        caption: "Manajemen modul materi belajar digital dan bank latihan soal siswa",
+        tag: "LMS"
+      },
+      {
+        url: bimbelTambahCourse,
+        title: "Manajemen Course & Kelas",
+        caption: "Formulir penambahan modul baru dan pengaturan jadwal kelas bimbingan",
+        tag: "Course Management"
+      },
+      {
+        url: bimbelLayanan,
+        title: "Katalog Program & Layanan",
+        caption: "Daftar paket bimbingan belajar reguler, intensif, dan persiapan ujian",
+        tag: "Layanan"
+      },
+      {
+        url: bimbelProfil,
+        title: "Profil Lembaga & Tutor",
+        caption: "Informasi visi misi lembaga bimbingan belajar serta daftar tenaga pendidik",
+        tag: "Profil"
+      },
+      {
+        url: bimbelKontak,
+        title: "Kontak & Pendaftaran Siswa Baru",
+        caption: "Formulir registrasi daring calon siswa baru dan kanal komunikasi",
+        tag: "Registrasi"
+      }
+    ]
   },
   {
     id: "catshop",
@@ -531,7 +616,44 @@ export const projectList = [
     ],
     architecture: "Web Stack: PHP, MySQL, Bootstrap, Custom CSS, JavaScript; Desain: Figma UI/UX Prototype.",
     techStack: ["PHP", "MySQL", "CSS3", "JavaScript", "Figma", "E-Commerce Architecture"],
-    screenshots: []
+    screenshots: [
+      {
+        url: catshopAwal,
+        title: "Halaman Utama Toko (Hero)",
+        caption: "Antarmuka etalase toko online Catshop dengan promo dan banner menarik",
+        tag: "Storefront"
+      },
+      {
+        url: catshopShop,
+        title: "Katalog Belanja Produk",
+        caption: "Daftar produk makanan, aksesoris, dan vitamin kucing lengkap dengan harga",
+        tag: "Catalog"
+      },
+      {
+        url: catshopGrooming,
+        title: "Layanan Grooming Kucing",
+        caption: "Informasi dan reservasi paket perawatan bulu, mandi, dan kebersihan",
+        tag: "Grooming"
+      },
+      {
+        url: catshopPenitipan,
+        title: "Layanan Penitipan Hewan",
+        caption: "Fasilitas penitipan kucing harian dengan pemantauan kenyamanan",
+        tag: "Pet Hotel"
+      },
+      {
+        url: catshopLogin,
+        title: "Autentikasi & Login Pengguna",
+        caption: "Halaman masuk akun pelanggan dan administrator toko",
+        tag: "Auth"
+      },
+      {
+        url: catshopSignUp,
+        title: "Registrasi Akun Baru",
+        caption: "Pendaftaran akun pelanggan baru dengan validasi data aman",
+        tag: "Registration"
+      }
+    ]
   },
   {
     id: "thinger-io",

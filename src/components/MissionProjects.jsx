@@ -115,23 +115,46 @@ export default function MissionProjects() {
               }`}
             >
               
-              {/* Card Header & Content */}
-              <div className="p-4 sm:p-6 skew-x-0 sm:skew-x-[4deg]">
-                
-                {/* Top Badge Info */}
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className={`text-xs font-mono font-bold px-2 py-0.5 border ${
-                    project.featured
-                      ? 'bg-[#E60012] text-white border-white'
-                      : 'bg-black text-[#FFE600] border-zinc-700'
-                  }`}>
-                    {project.rankBadge}
-                  </span>
-
-                  <span className="text-xs font-mono text-zinc-400 font-bold uppercase tracking-wider">
-                    {project.category}
-                  </span>
+              {/* Project Screenshot Thumbnail Preview */}
+              {project.screenshots && project.screenshots.length > 0 && (
+                <div 
+                  onClick={() => handleOpenDetail(project)}
+                  className="relative w-full h-44 sm:h-48 bg-[#08080C] overflow-hidden border-b-2 border-zinc-800/90 cursor-pointer group/img"
+                  title="Klik untuk melihat berkas detail teknis"
+                >
+                  <img 
+                    src={project.screenshots[0].url} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover object-top transition-transform duration-300 group-hover/img:scale-105 opacity-90 group-hover/img:opacity-100" 
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#12121A] via-transparent to-transparent pointer-events-none" />
+                  
+                  {/* Screenshot Count Badge */}
+                  <div className="absolute bottom-2 right-2 bg-black/85 backdrop-blur-sm text-[#FFE600] font-mono text-[10px] px-2 py-0.5 border border-zinc-700 font-bold flex items-center gap-1 shadow-[2px_2px_0px_#000]">
+                    <Star size={10} className="fill-[#FFE600]" />
+                    <span>{project.screenshots.length} SCREENSHOTS</span>
+                  </div>
                 </div>
+              )}
+
+              {/* Card Header & Content */}
+              <div className="p-4 sm:p-5 skew-x-0 sm:skew-x-[4deg] flex-1 flex flex-col justify-between">
+                <div>
+                  {/* Top Badge Info */}
+                  <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <span className={`text-xs font-mono font-bold px-2 py-0.5 border ${
+                      project.featured
+                        ? 'bg-[#E60012] text-white border-white'
+                        : 'bg-black text-[#FFE600] border-zinc-700'
+                    }`}>
+                      {project.rankBadge}
+                    </span>
+
+                    <span className="text-xs font-mono text-zinc-400 font-bold uppercase tracking-wider">
+                      {project.category}
+                    </span>
+                  </div>
 
                 {/* Title (Crisp, Bold & Highly Readable) */}
                 <h3 className="font-bebas text-2xl sm:text-3xl text-white tracking-wide group-hover:text-[#E60012] transition-colors leading-tight mb-1">
@@ -162,6 +185,7 @@ export default function MissionProjects() {
                       +{project.techStack.length - 4} more
                     </span>
                   )}
+                  </div>
                 </div>
 
               </div>

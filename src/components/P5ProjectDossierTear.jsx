@@ -228,17 +228,17 @@ export default function P5ProjectDossierTear({ project, onComplete }) {
 
           {/* Bottom Slanted Caution Ribbon */}
           <div className="absolute bottom-12 left-0 right-0 h-6 p5-caution-strip-yellow rotate-[-2deg] opacity-75 shadow-lg" />
+        </div>
 
-          {/* Right Typography & Calling Card Badge */}
-          <div className="absolute bottom-6 right-4 sm:bottom-14 sm:right-12 text-right z-10">
-            <div className="inline-block bg-black text-white font-p5 text-2xl sm:text-5xl px-3.5 sm:px-5 py-1.5 sm:py-2 skew-x-[-10deg] shadow-[5px_5px_0px_#000] sm:shadow-[8px_8px_0px_#000] border-2 border-white mb-1.5 sm:mb-2 font-bold">
-              TAKE YOUR HEART!
-            </div>
+        {/* Right Typography & Calling Card Badge — OUTSIDE clip-path to prevent clipping */}
+        <div className="absolute bottom-6 right-4 sm:bottom-14 sm:right-12 text-right z-10 max-w-[65%] sm:max-w-[45%] lg:max-w-[40%]">
+          <div className="inline-block bg-black text-white font-p5 text-xl sm:text-5xl px-3 sm:px-5 py-1 sm:py-2 skew-x-[-8deg] sm:skew-x-[-10deg] shadow-[5px_5px_0px_#000] sm:shadow-[8px_8px_0px_#000] border-2 border-white mb-1.5 sm:mb-2 font-bold">
+            TAKE YOUR HEART!
+          </div>
 
-            <div className="text-[10px] sm:text-sm font-mono text-white tracking-widest font-bold uppercase drop-shadow-[2px_2px_0px_#000] flex items-center justify-end gap-1.5 sm:gap-2">
-              <span className="text-[#FFE600]">★</span>
-              <span>ARSITEKTUR SISTEM • FITUR • REPOSITORI</span>
-            </div>
+          <div className="text-[10px] sm:text-sm font-mono text-white tracking-wider sm:tracking-widest font-bold uppercase drop-shadow-[2px_2px_0px_#000] flex items-center justify-end gap-1.5 sm:gap-2">
+            <span className="text-[#FFE600]">★</span>
+            <span>ARSITEKTUR SISTEM • FITUR</span>
           </div>
         </div>
 
@@ -327,21 +327,21 @@ export default function P5ProjectDossierTear({ project, onComplete }) {
           <motion.div
             initial={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.2, transition: { duration: 0.3 } }}
-            className="absolute inset-0 pointer-events-none flex items-center justify-center z-40"
+            className="absolute inset-0 pointer-events-none flex items-center justify-center z-40 px-3"
           >
             <div className="relative flex flex-col items-center group pointer-events-auto">
-              <div className="bg-black border-4 border-white p-4 sm:p-6 skew-x-[-12deg] shadow-[14px_14px_0px_#E60012] rotate-[-4deg] transition-all duration-200 group-hover:border-[#FFE600] group-hover:scale-105">
-                <div className="skew-x-[12deg] flex items-center gap-3.5">
-                  <span className="w-11 h-11 sm:w-14 sm:h-14 bg-[#E60012] text-white flex items-center justify-center font-p5 text-2xl sm:text-4xl shadow-[4px_4px_0px_#000] animate-bounce flex-shrink-0">
+              <div className="bg-black border-2 sm:border-4 border-white p-3 sm:p-6 skew-x-[-8deg] sm:skew-x-[-12deg] shadow-[8px_8px_0px_#E60012] sm:shadow-[14px_14px_0px_#E60012] rotate-[-4deg] transition-all duration-200 group-hover:border-[#FFE600] group-hover:scale-105 max-w-[92vw] sm:max-w-none">
+                <div className="skew-x-[8deg] sm:skew-x-[12deg] flex items-center gap-2.5 sm:gap-3.5">
+                  <span className="w-10 h-10 sm:w-14 sm:h-14 bg-[#E60012] text-white flex items-center justify-center font-p5 text-xl sm:text-4xl shadow-[3px_3px_0px_#000] animate-bounce flex-shrink-0">
                     ★
                   </span>
                   <div>
-                    <div className="text-white font-p5-expose text-xl sm:text-3xl tracking-widest leading-none flex items-center gap-2">
+                    <div className="text-white font-p5-expose text-lg sm:text-3xl tracking-wider sm:tracking-widest leading-none flex items-center gap-2">
                       <span>MEMBUKA BERKAS MISI</span>
                     </div>
-                    <div className="text-[#FFE600] font-mono text-xs sm:text-sm tracking-wider font-bold mt-1.5 flex items-center gap-1.5">
-                      <MousePointerClick size={15} className="text-[#FFE600]" />
-                      <span>KLIK DI MANA SAJA UNTUK MEMBUKA LANGSUNG</span>
+                    <div className="text-[#FFE600] font-mono text-[10px] sm:text-sm tracking-wider font-bold mt-1 sm:mt-1.5 flex items-center gap-1.5">
+                      <MousePointerClick size={14} className="text-[#FFE600] sm:w-[15px] sm:h-[15px]" />
+                      <span>KLIK UNTUK MEMBUKA LANGSUNG</span>
                     </div>
                   </div>
                 </div>

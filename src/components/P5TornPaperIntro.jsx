@@ -92,7 +92,7 @@ export default function P5TornPaperIntro({ onComplete }) {
         }}
         className="absolute inset-0"
       >
-        {/* Black Polygon Layer */}
+        {/* Black Polygon Layer (Background only — no text inside to avoid clipping) */}
         <div
           className="absolute inset-0 bg-[#0A0A0C]"
           style={{
@@ -117,24 +117,25 @@ export default function P5TornPaperIntro({ onComplete }) {
         >
           <div className="absolute inset-0 p5-halftone opacity-35"></div>
           <div className="absolute top-14 left-0 right-0 h-7 p5-caution-strip rotate-[-3deg] opacity-75 shadow-lg"></div>
+        </div>
 
-          <div className="absolute top-10 left-8 sm:top-16 sm:left-14 z-10">
-            <div className="inline-flex items-center gap-2 bg-[#E60012] text-white font-p5-menu text-sm sm:text-base px-3.5 py-1.5 skew-x-[-10deg] shadow-[4px_4px_0px_#000] mb-2.5">
-              <Star size={15} className="fill-[#FFE600] text-[#FFE600]" />
-              <span>INFILTRATION TARGET ACQUIRED</span>
-            </div>
+        {/* Left Typography — OUTSIDE clipPath to guarantee zero text clipping */}
+        <div className="absolute top-6 left-4 sm:top-16 sm:left-14 z-10 max-w-[55%] sm:max-w-[42%] lg:max-w-[38%]">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#E60012] text-white font-p5-menu text-[10px] sm:text-base px-2.5 sm:px-3.5 py-1 sm:py-1.5 skew-x-[-10deg] shadow-[3px_3px_0px_#000] mb-2">
+            <Star size={13} className="fill-[#FFE600] text-[#FFE600] sm:w-4 sm:h-4" />
+            <span>INFILTRATION TARGET ACQUIRED</span>
+          </div>
 
-            <div className="font-p5-title text-4xl sm:text-7xl lg:text-8xl text-white tracking-widest leading-none drop-shadow-[5px_5px_0px_#000]">
-              MUHAMAD <span className="text-[#E60012]">HATA</span>
-            </div>
+          <div className="font-p5-title text-2xl sm:text-6xl lg:text-7xl text-white tracking-wider sm:tracking-widest leading-none drop-shadow-[4px_4px_0px_#000] sm:drop-shadow-[5px_5px_0px_#000]">
+            MUHAMAD <span className="text-[#E60012]">HATA</span>
+          </div>
 
-            <div className="text-xs sm:text-sm font-p5-menu text-[#FFE600] mt-2 tracking-widest font-black uppercase flex items-center gap-2">
-              <span>FULLSTACK MOBILE</span>
-              <span className="text-zinc-500">•</span>
-              <span>WEB</span>
-              <span className="text-zinc-500">•</span>
-              <span>AI ENGINEER</span>
-            </div>
+          <div className="text-[10px] sm:text-sm font-p5-menu text-[#FFE600] mt-1.5 tracking-wider font-black uppercase flex flex-wrap items-center gap-1 sm:gap-2">
+            <span>FULLSTACK MOBILE</span>
+            <span className="text-zinc-500">•</span>
+            <span>WEB</span>
+            <span className="text-zinc-500">•</span>
+            <span>AI ENGINEER</span>
           </div>
         </div>
 
@@ -173,7 +174,7 @@ export default function P5TornPaperIntro({ onComplete }) {
         }}
         className="absolute inset-0"
       >
-        {/* Red Polygon Layer */}
+        {/* Red Polygon Layer (Background only — no text inside to avoid clipping) */}
         <div
           className="absolute inset-0 bg-[#E60012]"
           style={{
@@ -197,18 +198,18 @@ export default function P5TornPaperIntro({ onComplete }) {
           }}
         >
           <div className="absolute inset-0 p5-halftone-dense opacity-35"></div>
+          <div className="absolute bottom-16 left-0 right-0 h-7 p5-caution-strip-yellow rotate-[-2deg] opacity-70"></div>
+        </div>
 
-          <div className="absolute bottom-10 right-8 sm:bottom-16 sm:right-14 text-right z-10">
-            <div className="inline-block bg-black text-white font-p5 text-3xl sm:text-6xl px-5 py-2 skew-x-[-10deg] shadow-[8px_8px_0px_#000] border-2 border-white mb-2.5">
-              TAKE YOUR HEART!
-            </div>
-
-            <div className="text-xs sm:text-base font-p5-menu text-white tracking-widest font-black uppercase drop-shadow-[2px_2px_0px_#000]">
-              UPI TEKNIK KOMPUTER • BRIN PR KAKS
-            </div>
+        {/* Right Typography — OUTSIDE clipPath to guarantee zero text clipping */}
+        <div className="absolute bottom-6 right-4 sm:bottom-16 sm:right-14 text-right z-10 max-w-[65%] sm:max-w-[45%] lg:max-w-[40%]">
+          <div className="inline-block bg-black text-white font-p5 text-xl sm:text-5xl lg:text-6xl px-3 sm:px-5 py-1 sm:py-2 skew-x-[-8deg] sm:skew-x-[-10deg] shadow-[5px_5px_0px_#000] sm:shadow-[8px_8px_0px_#000] border-2 border-white mb-1.5 sm:mb-2.5 font-bold">
+            TAKE YOUR HEART!
           </div>
 
-          <div className="absolute bottom-16 left-0 right-0 h-7 p5-caution-strip-yellow rotate-[-2deg] opacity-70"></div>
+          <div className="text-[10px] sm:text-base font-p5-menu text-white tracking-wider sm:tracking-widest font-black uppercase drop-shadow-[2px_2px_0px_#000]">
+            UPI TEKNIK KOMPUTER • BRIN PR KAKS
+          </div>
         </div>
 
         {/* White Lightning Jagged Border attached to Right Red piece */}
@@ -300,23 +301,23 @@ export default function P5TornPaperIntro({ onComplete }) {
           <motion.div
             initial={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.25, transition: { duration: 0.4 } }}
-            className="absolute inset-0 pointer-events-none flex items-center justify-center z-40"
+            className="absolute inset-0 pointer-events-none flex items-center justify-center z-40 px-4"
           >
             <motion.div 
               whileHover={{ scale: 1.05 }}
               className="relative flex flex-col items-center group pointer-events-auto"
             >
-              <div className="bg-black border-4 border-white p-5 sm:p-7 skew-x-[-12deg] shadow-[16px_16px_0px_#E60012] rotate-[-5deg] transition-all duration-300 group-hover:border-[#FFE600]">
-                <div className="skew-x-[12deg] flex items-center gap-4">
-                  <span className="w-12 h-12 sm:w-14 sm:h-14 bg-[#E60012] text-white flex items-center justify-center font-p5 text-3xl sm:text-4xl shadow-[4px_4px_0px_#000] animate-bounce flex-shrink-0">
+              <div className="bg-black border-2 sm:border-4 border-white p-3.5 sm:p-7 skew-x-[-8deg] sm:skew-x-[-12deg] shadow-[8px_8px_0px_#E60012] sm:shadow-[16px_16px_0px_#E60012] rotate-[-4deg] sm:rotate-[-5deg] transition-all duration-300 group-hover:border-[#FFE600] max-w-[90vw] sm:max-w-none">
+                <div className="skew-x-[8deg] sm:skew-x-[12deg] flex items-center gap-2.5 sm:gap-4">
+                  <span className="w-10 h-10 sm:w-14 sm:h-14 bg-[#E60012] text-white flex items-center justify-center font-p5 text-2xl sm:text-4xl shadow-[3px_3px_0px_#000] animate-bounce flex-shrink-0">
                     ★
                   </span>
                   <div>
-                    <div className="text-white font-p5-expose text-2xl sm:text-5xl tracking-widest leading-none flex items-center gap-2">
+                    <div className="text-white font-p5-expose text-xl sm:text-5xl tracking-wider sm:tracking-widest leading-none flex items-center gap-2">
                       <span>PORTFOLIO WEBSITE</span>
                     </div>
-                    <div className="text-[#FFE600] font-p5-menu text-xs sm:text-base tracking-wider font-black mt-2 flex items-center gap-2 animate-pulse">
-                      <MousePointerClick size={18} className="text-[#FFE600]" />
+                    <div className="text-[#FFE600] font-p5-menu text-[10px] sm:text-base tracking-wider font-black mt-1.5 sm:mt-2 flex items-center gap-1.5 sm:gap-2 animate-pulse">
+                      <MousePointerClick size={14} className="text-[#FFE600] sm:w-[18px] sm:h-[18px]" />
                       <span>KLIK UNTUK MASUK KE BERANDA</span>
                     </div>
                   </div>
